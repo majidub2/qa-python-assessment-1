@@ -35,6 +35,9 @@
 
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
+import numbers
+
+
 def one(string1, string2):
 	length1= len(string1)
 	length2= len(string2)
@@ -247,12 +250,25 @@ def seven(inputString, char):
 	# eight("15 72 80 164") → 11
 	# eight("555 72 86 45 10") → 15
 
+
 	# <HINT>
 
 	# help(int) for working with numbers and help(str) for working with Strings.
 
+
+
 def eight(arg1):
-	return 0
+
+	numberList = arg1.split(" ")
+	for i in range(len(numberList)):
+		count = 0
+		for char in numberList[i]:
+			count = count + int(char)
+		numberList[i] = count
+
+
+		
+	return max(numberList)
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
